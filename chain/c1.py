@@ -8,7 +8,7 @@ prompt = PromptTemplate(
     template="What is a good name for a company that makes {product}?",
 )
 
-chain = LLMChain(llm=utils.llm_model, prompt=prompt)
+chain = LLMChain(llm=utils.openai_model, prompt=prompt)
 
 # Run the chain only specifying the input variable.
 res1 = chain.invoke("算命")
@@ -38,6 +38,6 @@ human_message_prompt = HumanMessagePromptTemplate(
 )
 
 chat_prompt_template = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
-chain = LLMChain(llm=utils.chat_model, prompt=chat_prompt_template)
+chain = LLMChain(llm=utils.openai_chat_model, prompt=chat_prompt_template)
 res2 = chain.invoke("算命")
 print(f"res2: {res2}")

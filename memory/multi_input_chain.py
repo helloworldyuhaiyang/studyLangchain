@@ -37,7 +37,7 @@ memory = ConversationBufferMemory(memory_key="chat_history", input_key="human_in
 
 # 会将 docs 传到 prompt 的 {context} 中
 chain = load_qa_chain(
-    utils.llm_model, chain_type="stuff", memory=memory, prompt=prompt
+    utils.openai_model, chain_type="stuff", memory=memory, prompt=prompt
 )
 
 # 用户输入和 文档输入

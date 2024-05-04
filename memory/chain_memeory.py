@@ -1,5 +1,5 @@
 from langchain.chains.llm import LLMChain
-from utils import llm_model
+from utils import openai_model
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 
@@ -16,7 +16,7 @@ prompt = PromptTemplate(
 memory = ConversationBufferMemory(memory_key="chat_history")
 
 llm_chain = LLMChain(
-    llm=llm_model,
+    llm=openai_model,
     prompt=prompt,
     verbose=True,
     memory=memory,
