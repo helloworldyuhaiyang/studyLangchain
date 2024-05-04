@@ -19,5 +19,3 @@ agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 res2 = agent_executor.invoke({'input': "What is the height difference between Eiffel Tower and Taiwan 101 Tower?"})
 print(res2)
 
-
-
